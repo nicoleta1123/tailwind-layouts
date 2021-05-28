@@ -1,0 +1,27 @@
+{
+    "name": "layout-1",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "buid": "vite build",
+        "serve": "vite preview"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "husky": "^6.0.0",
+        "pretty-quick": "^3.1.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "description": "",
+    "dependencies": {
+        "alpinejs": "^2.8.2",
+        "tailwindcss": "^2.1.2",
+        "vite": "^2.2.4"
+    }
+}

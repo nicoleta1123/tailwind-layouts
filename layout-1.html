@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="bg-gray-50">
+    <div class="container mx-auto bg-white border border-gray-100">
+      <div class="header pt-24 pb-20">
+        <h1 class="font-bold text-6xl text-center">Pricing plans</h1>
+        <p class="text-gray-500 text-xl text-center my-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          repellendus?
+        </p>
+        <div class="flex mx-auto" style="width: fit-content">
+          <div class="flex bg-gray-100 p-1 rounded">
+            <button class="p-3 bg-white rounded">Monthly billing</button>
+            <button class="p-3 rounded">Yearly billing</button>
+          </div>
+        </div>
+      </div>
+      <div
+        x-data='{
+          cards: [
+            {
+                heading: "Lorem, ipsum.",
+                paragraph: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, consequuntur.",
+                price: "45$",
+                buttontext: "sjdasfhjhlf",
+                whatsIncluded: ["ffasfa", "hghfhg", "dafag"]
+            },
+            {
+                heading: "Lorem, ipsum.",
+                paragraph: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, consequuntur.",
+                price: "45$",
+                buttontext: "sjdasfhjhlf",
+                whatsIncluded: ["ffasfa"]
+            },
+            {
+                heading: "Lorem, ipsum.",
+                paragraph: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, consequuntur.",
+                price: "45$",
+                buttontext: "sjdasfhjhlf",
+                whatsIncluded: ["ffasfa", "hghfhg", "dafag", "asdfasdf", "asdfega"]
+            },
+            {
+                heading: "Lorem, ipsum.",
+                paragraph: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, consequuntur.",
+                price: "45$",
+                buttontext: "sjdasfhjhlf",
+                whatsIncluded: ["ffasfa", "hghfhg",]
+            },
+            
+          ]
+      }'
+        class="flex gap-5 px-10 pb-24"
+      >
+        <template x-for="card in cards">
+          <div class="card border border-gray-100 rounded p-5 flex-shrink">
+            <h4 class="text-xl font-bold" x-text="card.heading"></h4>
+            <p
+              style="word-wrap: break-word !important"
+              class="text-gray-500 p-1"
+              x-text="card.paragraph"
+            ></p>
+            <div x-text="card.price"></div>
+            <button x-text="card.buttontext"></button>
+
+            <div>
+              <h6>Lorem, ipsum.</h6>
+
+              <ul>
+                <template x-for="listItem in card.whatsIncluded">
+                  <li x-text="listItem"></li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </body>
+</html>
